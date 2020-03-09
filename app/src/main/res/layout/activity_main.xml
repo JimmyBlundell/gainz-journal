@@ -36,7 +36,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/horizontal_border"
         app:layout_constraintEnd_toStartOf="@+id/vertical_border"
-        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+        android:src="@drawable/icons8-time-machine-24" />
 
     <ImageButton
         android:id="@+id/records_button"
