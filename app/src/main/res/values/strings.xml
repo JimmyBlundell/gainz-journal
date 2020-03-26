@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Gainz Journal</string>
-    <string name="workouts">WORKOUTS</string>
+    <string name="routines">ROUTINES</string>
     <string name="add_workout">ADD WORKOUT</string>
-    <string name="history">HISTORY</string>
+    <string name="logs">LOGS</string>
     <string name="records">RECORDS</string>
     <string name="profile">PROFILE</string>
+    <string name="workouts">WORKOUTS</string>
+    <string name="exercises">EXERCISES</string>
 </resources>
