@@ -1,0 +1,44 @@
+USER
+  USER_ID
+  NAME
+ROUTINE
+  ROUTINE_ID
+  NAME_ROUTINE
+EXERCISE
+  EXERCISE_ID
+  NAME_EXERCISE
+ROUTINE_EXERCISE
+  ROUTINE_EXERCISE_ID
+  ROUTINE_ID
+  EXERCISE_ID
+REP_CNT_WEIGHT
+  REP_CNT_WEIGHT_ID
+  REP_CNT
+  WEIGHT
+ROUTINE_EXERCISE_REP_CNT_WEIGHT
+  ROUTINE_EXERCISE_REP_CNT_WEIGHT_ID
+  ROUTINE_EXERCISE_ID
+  REP_CNT_WEIGHT_ID
+SESSION
+  SESSION_ID
+  USER_ID
+  WORKOUT_DTS
+LOG_WORKOUT
+  LOG_WORKOUT_ID
+  SESSION_ID
+  ROUTINE_EXERCISE_REP_CNT_WEIGHT_ID
+  SET
+
+User - Contains the users of the application.
+
+Routine - Contains the routine names.
+
+Exercise - Contains the exercise names.
+
+Rep Count Weight - Contains the amount of rep and weight (they can have multiple sets with the same rep count and weight).
+
+Routine Exercise Rep Count Weight - Contains the routine (they can have more than one), the exercises associated with each routine (they can have more than one), the rep count, and weight. In other words, the same routine --> exercise --> rep count --> and rep weight could happen multiple times.
+
+Session - Contains the user and the session datetime.
+
+Log Workout - Contains the workout session, the exercise via Routine Exercise Rep Count Weight (see above), tracks the set number. (We do this because you could have two sets that are the exact same.)
