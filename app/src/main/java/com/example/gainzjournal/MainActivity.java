@@ -16,8 +16,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton logs_button;
     private ImageButton records_button;
 
+    DatabaseHelper myDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        myDb = new DatabaseHelper(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
