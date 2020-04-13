@@ -9,10 +9,6 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "gainz.db";
     public static final String EXERCISE_TABLE = "exercises";
-    /* - Not sure if I need these? So far I'm just passing the strings directly into the sql queries
-    public static final String EXERCISE_ID_COL = "exercise_id";
-    public static final String EXERCISE_NAME_COL = "exercise_name";
-    */
     public static final String ROUTINE_TABLE = "routines";
     public static final String ROUTINE_EXERCISE_TABLE = "routine_exercise";
     public static final String REP_CNT_WEIGHT_TABLE = "rep_cnt_weight";
@@ -21,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String LOG_WORKOUT_TABLE = "log_workout";
 
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 3);
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
