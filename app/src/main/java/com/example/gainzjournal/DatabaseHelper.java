@@ -1,6 +1,8 @@
 package com.example.gainzjournal;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -16,8 +18,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String SESSION_TABLE = "sessions";
     public static final String LOG_WORKOUT_TABLE = "log_workout";
 
+    public static final String exercise_name = "exercise_name";
+    //public static final String routine_name = "routine_name";
+
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 3);
+        super(context, DB_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
     }
 
@@ -41,7 +46,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + ROUTINE_EXERCISE_REP_CNT_WEIGHT_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + SESSION_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + LOG_WORKOUT_TABLE);
+        onCreate(db);
     }
 
+    public boolean addExercise(String exercise) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(exercise_name, exercise);
 
+        long result = db.insert(EXERCISE_TABLE, null, contentValues);
+
+        if (result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public Cursor getExercises() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + EXERCISE_TABLE, null);
+        return data;
+    }
 }

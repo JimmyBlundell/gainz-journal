@@ -3,7 +3,6 @@ package com.example.gainzjournal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
-import android.widget.Button;
 import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                  openExerciseActivity();
+                  openExercisesAddActivity();
             }
         });
 
@@ -67,27 +66,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openExerciseActivity()
+    public void openExercisesAddActivity()
     {
-        Intent intent = new Intent(this, Exercises.class);
+        Intent intent = new Intent(this, ExercisesAdd.class);
         startActivity(intent);
     }
 
     public void openRoutinesActivity()
     {
-        Intent intent = new Intent(this, Exercises.class);
+        Intent intent = new Intent(this, Routines.class);
         startActivity(intent);
     }
 
     public void openLogsActivity()
     {
-        Intent intent = new Intent(this, Exercises.class);
+        Intent intent = new Intent(this, Logs.class);
         startActivity(intent);
     }
 
     public void openRecordsActivity()
     {
-        Intent intent = new Intent(this, Exercises.class);
+        Intent intent = new Intent(this, Records.class);
         startActivity(intent);
     }
 
